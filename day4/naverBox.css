@@ -41,8 +41,11 @@ div{
     height:170px;
     width:1080px;
     border-color: red;
+    position: relative;
 
 }
+
+
 .nav-bottom-inner{
     margin:0 auto;
     height:47px;
@@ -187,4 +190,71 @@ div{
 
 .float-right{
     float : right;
+}
+
+
+
+/*나
+.area-links{
+    position: absolute;
+    top : 11px;
+    right: -5px;
+}
+
+.area-links>a:nth-child(1){
+    float: left;
+    height: 21px;
+    color: #888;
+    letter-spacing: -1px;
+    font-size: 11px;
+    line-height: 22px;
+    text-decoration: none;
+}
+
+.area-links-icon{
+    display: inline-block;
+    margin-left: 5px;
+    width: 6px;
+    height: 7px;
+    background-image: url("https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png");
+    background-position: -158px -94px;
+}
+*/
+
+
+.nav-links{
+    position: absolute;
+    right : -5px;
+    top : 11px;
+}
+
+.nav-links>a{
+    text-decoration: none;
+}
+
+.favorite{
+    line-height: 22px;
+    font-size: 11px;
+    color: #888;
+    float: left;
+}
+
+.jrnaver,
+.happy{
+    padding: 5px;
+    float: left;
+}
+
+.jrnaver-inner{
+    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png');
+    background-position: 0 -120px;
+    height: 11px;
+    width:58px;  /*부모 태그의 가로의 길이가 미지정이기 때문에*/
+}
+
+.happy-inner{
+    background-image: url('https://s.pstatic.net/static/www/img/2018/sp_main_v181019.png');
+    background-position: -143px -52px;
+    height: 11px;
+    width: 34px;
 }
