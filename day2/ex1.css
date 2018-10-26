@@ -1,0 +1,39 @@
+@charset 'utf-8';
+div{
+    text-decoration: overline;
+    text-align: left;
+    text-indent: 10px;
+    font-weight: bold; /* bold는 700정도 됨*/
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif, '나눔','Nanum';  
+    /* 글꼴이 한글이면 이에 해당하는 영문 글꼴명도 같이 써줘야함. 인식못할수도 있으므로.
+    폰트명은 ''로 묶어주는게 좋음. 글꼴 그룹을 쓸때는 ''안써도됨.
+    Times New Roman 은 폰트명, Times 는 글꼴 그룹명 */
+    font-size: 40px;
+    font : italic 700 50px 'Times New Roman';
+    /*margin은 태그를 하나의 박스로 생각한다면 박스 밖의 여백*/
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+    /* 위를 기준으로 시계 방향. 위(top) 오른쪽(right) 아래(bottom) 왼쪽(left)*/
+    margin: 10px 20px 30px 40px;
+    margin: 10px 20px 10px 20px; /*아래와 같은 경우*/
+    margin: 10px 20px; /*위아래와 좌우가 대칭인 경우*/
+    margin: 10px; /*전부다 같은경우*/
+    margin: 10px 20px 30px 20px; /*아래와 같은 경우*/
+    margin: 10px 20px 30px; /*좌우가 대칭인 경우*/
+    margin: 10px;
+    /*모든 속성은 마지막에 있는 속성값으로 덮어쓰기한다.
+    그러므로 위의 마진 속성에서 최종적으로 반영되는 속성은 가장 아래에 있는 margin: 10px; 이것.*/
+    border-top-style: solid;
+    border-top-width: 10px;
+    border-top-color: red;
+    border-style: solid;
+    border-width: 10px;
+    border-color: red;
+    border:solid 1px #00ff00;   /*font, margin은 순서 지켜야되지만 border는 상관없이 써도 됨.*/
+    border-bottom: solid 1px red;
+    padding:10px 15px;
+    border-radius:10px; 
+}

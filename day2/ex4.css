@@ -1,0 +1,38 @@
+@charset 'utf=8';
+*{
+    box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+div{
+    border: solid 1px black;
+}
+/*지금 당장 사용할 클래스는 아님*/
+.container{}
+
+#top{
+    height: 100px;
+    border-color: red;
+}
+#bottom{
+    border-color: blue;
+    padding: 8px;
+}
+#bottom-inner{
+    border-color:green;
+    font-size:0px;    /*div코드를 칠 때 엔터친것때문에 font-size를 0으로 설정해 주어야함*/
+}
+#bottom-inner>*{
+    font-size:14px;
+}
+
+#bottom-left,#bottom-right{
+    height: 400px;
+    width: calc((100% - 8px)/2);  /*calc 함수 사용할때 연산자 앞 뒤로 공백 꼭 입력해주기*/
+    display: inline-block;
+}
+#bottom-right{
+    float: right;
+}

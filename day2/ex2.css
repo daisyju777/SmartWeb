@@ -1,0 +1,35 @@
+@charset 'utf-8';
+/* box 클래스*/
+.box{
+    background-color: aliceblue;
+    height: 400px; /*내용이 없으므로 그냥 실행하면 아무것도 안나옴. 그러므로 height라는 속성값을 지정해서 실행해봄*/
+
+    background-image: url('../day1/cat.jpg');
+    /*
+    background-position-x: center;  x축 기준으로 가운데
+    background-position-y: center;  y축 기준으로 가운데
+    */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+div{
+    font: normal 24px verdata; 
+    cursor: pointer;
+}
+.dropText{text-shadow: 3px 3px;}
+.redText{text-shadow: 3px 3px red;}
+.blurText{text-shadow: 3px 3px 5px skyblue;}
+.glowEffect{text-shadow: 0px 0px 3px red;}
+.wordArtEffect{
+    color:white;
+    text-shadow: 0px 0px 3px darkblue;}
+
+.threeDEffect{
+    color: white;
+    text-shadow: 2px 2px 4px black;}
+
+.multiEffect{
+    color: yellow;
+    text-shadow: 2px 2px 2px black,
+                 0 0 25px blue, 0 0 5px darkblue;}

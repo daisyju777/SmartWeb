@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        일반적(대부분)으로 input 태그는 form태그 안에 들어가 있음 
+        input태그의 목적은 정보를 입력하는 것
+        입력한 정보를 처리하기 위해 서버에 정보를 전송하는 form태그와 같이 사용이 됨
+        button태그나 input태그의 button도 같이 사용
+    -->
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+    <input type="checkbox" name="" id="">  
+    <!--     
+    checkbox는 주로 중복을 허용하면서 선택할 경우 사용
+    체크박스는 선택 해제가 가능
+    radio는 주로 중복을 허용하지 않을 경우 사용 (속성 중 name을 이용하여 동일한 name을 가진 다른 raido가 선택되면 이전에 선택된 건 해제됨)
+    라디오박스는 선택 해제가 불가능
+    -->
+    <input type="radio" name="gender" id="">
+    <input type="radio" name="gender" id="">
+    <!-- 
+        email은 입력한 내용이 email형식인지 확인하여 아닐 경우 안내 메세지 출력해줌. email형식은 xxx@yyy. 이렇게 입력받은 문자열이 원하는 조건을 만족하는지 확인하는 작업을 유효성 검사라고함. email 형식을 사용하면 유효성검사 실행함.
+    -->
+    <input type="email" name="" id="">
+    <!-- 
+        첨부파일과 같이 내 pc에 있는 파일을 선택할 시 사용 
+    -->
+    <input type="file" name="" id="">
+    <br>
+    <!-- 
+        a태그는 다른페이지로 이동할 때 사용하거나 같은 페이지안에서 내가 원하는 위치로 이동할때 사용.
+        속성 href안에 주소를 입력할때 http://를 입력하지 않으면 base태그에서 설정된 주소에 이어붙이기가 됨. (현재URI주소는 로컬호스트)
+        그러므로 동일한 사이트에서 이동할 때에는 http://를 사용하지 않지만 다른 사이트를 이용할 때에는 붙여줘야 함.
+        같은 페이지에서 원하는 위치로 이동하는 경우 href 속성에 #아이디명으로 내가 원하는 원하는 아이디가 있는 곳으로 이동할 수 있음.
+        img태그와 button태그와도 자주 같이 쓰임.
+    -->
+    <a href="https://www.naver.com/">네이버</a>
+    <a href="#abc">abc로 이동</a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1 id="abc">abc</h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    
+
+    <!-- 
+        ul태그와 li태그는 주로 메뉴를 만들 때 사용하고 이 때 메뉴는 세로로 보이지 않음. 
+        https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar&stacked=h 참고
+    -->
+    <ul>
+        <li>하나</li>
+        <li>둘</li>
+        <li>셋</li>
+    </ul>
+
+</body>
+</html>

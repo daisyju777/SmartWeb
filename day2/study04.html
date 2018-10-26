@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=i, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- a태그가 밖 button태그가 안인 경우 버튼 어디를 눌러도 네이버로 이동
+    button태그가 밖, a태그가 안인 경우 버튼을 잘못 누르면 네이버로 이동하지 않음 -->
+    <a href="https://www.naver.com/"><img src="naver.jpg"></a>
+    <a href="https://www.naver.com/"><button>네이버</button></a>
+    <button><a href="https://www.naver.com/">네이버</a></button>
+    <!-- input 태그와 a태그로 이루어진 경우는 input태그가 단일이라 한가지 경우뿐임 -->
+    <a href="https://www.naver.com/"><input type="button" value="네이버"></a>
+    <form action="">
+            <a href="https://www.naver.com/"><button type="button">네이버</button></a>
+    </form> 
+
+</body>
+</html>
+
+<!-- 
+form 태그 
+- 서버에 정보를 전송
+- action : 데이터를 전송할 서버 주소
+- method : 서버에 정보를 전송할 때 post방식으로 전달할건지 get방식으로 전달할건지를 결정
+input태그 : 데이터를 입력받기 위한 태그
+
+form태그안에 button태그를 쓰면 기본적으로 button type이 submit으로 설정되어있기때문에 버튼을 누르면 action에서 설정된 주소로 넘어감. 서버에 정보 전송.
+ 그렇기 때문에 form 태그안에 button태그가 있는경우, button태그를 눌렀을때 다른페이지로 이동하는 효과를 주려면 기본 type 으로 설정되어있는 submit을 button타입으로 바꾸어 줘야함.
+<form action="">
+        <a href="https://www.naver.com/"><button type="button">네이버</button></a>
+</form> 
+-->
