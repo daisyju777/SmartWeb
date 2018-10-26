@@ -1,0 +1,56 @@
+@charset "utf-8";
+/*
+셀렉터
+1. 테그 셀랙터
+ - 태그 이름을 그대로 사용한다.
+2. 아이디 셀렉터
+ - 아이디에 #을 앞에 붙여서 사용한다.  ex. 오직 한개에만 효과 지정할때 사용
+3. 클래스 셀렉터
+ - 클래스에 .을 앞에 붙여서 사용한다.  ex. 클래스하나를 만들어서 모든 버튼에 동일하게 효과 지정할 수 있음
+4. 가상클래스 셀렉터
+ - 동작과 관련하여 미리 정의된 가상 클래스가 있다.
+ - 혼자 쓰이지 않고 다른 셀렉터들과 같이 쓰인다.
+ - 다른 셀렉터 뒤에 :을 붙인 후 가장 클래스 이름을 사용하여 적용한다.
+5. 전체 셀렉터
+ - 셀렉터 이름이 *이다.  *는 전체를 의미
+*/
+div,p{
+    height: 100px;
+    background-color: skyblue;
+    color:green;
+
+}
+#hi{
+    font-weight: 700;
+}
+.font-red{
+    color: red;
+}
+.font-red:hover{
+    text-decoration:underline;
+    cursor: move;
+}
+*{
+    font-size:20px;
+    box-sizing: border-box;  /*box의 크기를 border를 보함한 박스 크기로 하겠다. */ /*익스플로러에서 최적화*/
+    -webkit-box-sizing: border-box; /*크롬에서 최적화*/
+    -moz-box-sizing: border-box /*파이어폭스에서 최적화*/
+  }
+  /*자식*/
+  div>b{                /*div의 자식 태그 b 에 적용됨. 자식태그는 바로 밑 자식*/
+      color: blue;
+  }
+  /*자손*/
+  div b{
+      color: green;  /*div의 자손 태그 b에 적용됨. */
+  }
+  /*b태그는 자식이기도 하고 자손이기도 하기때문에 위의 css 코드의 순서에 영향받아 색깔이 바뀜*/
+
+  /*형제*/
+  div.bold{
+      font-weight: bold;
+  }
+  .font-yellow.bold{
+        color: yellow;
+        font-weight:bold;
+  }
