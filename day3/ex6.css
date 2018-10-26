@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+.box{
+    height: 50px;
+    border: 1px solid black;
+    overflow: auto;    /*scroll로 설정하면 넘어가지 않아도 스크롤바 만들어져있음. 보통 auto를 많이 사용*/
+    /*
+    hidden : 컨텐츠 내용이 넘어간 내용 감추기
+    visible : 넘어간 내용 보이기
+    scroll : 넘어가 내용 스크롤을 이용하여 확인 가능
+    auto : 안넘어가면 hidden, 넘어가면 scroll로 설정
+    */
+}

@@ -1,0 +1,96 @@
+@charset 'utf-8';
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-size:14px;
+    margin : 0;
+    padding : 0;
+}
+/*
+div{
+    border: solid 1px black;
+}
+*/
+
+.container{
+    min-width: 1100px;  /*어떤 브라우저던 width값을 1100px 로 잡겠다. 화면을 줄이던 키우던 width값이 1100px로 유지됨 */
+
+}
+.nav-top{
+    /*height: 170px;*/
+}
+
+.nav-bottom{
+    /*height:47px;*/
+    border: 1px solid black;
+    border-right: none;
+    border-left:none;
+    /* 
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    */
+}
+
+.nav-top-inner{
+    margin:0 auto;
+    height:170px;
+    width:1080px;
+    border-color: red;
+
+}
+.nav-bottom-inner{
+    margin:0 auto;
+    height:47px;
+    width: 1080px;
+    border-color:blue;
+}
+.bottom-inner{
+    width:1100px;
+    margin: 0 auto;
+    padding:8px 10px 0; /*순서 : 상 우 하 좌 */
+    /* padding:8px 10px 0 10px; */
+}
+.bottom-wrap{
+    font-size:0;
+}
+
+/* bottom-left클래스와 bottom-right 클래스에 같이 적용될 css*/
+.bottom-left,
+.bottom-right{
+    display: inline-block;
+}
+.bottom-left{
+    width: 740px;
+}
+.bottom-right{
+    width:332px;
+    float: right;
+
+}
+.bottom-left>div,
+.bottom-right>div{
+    margin-bottom: 8px;
+    border:solid 1px black;
+}
+
+.box1{
+    height:120px;
+}
+.box2{
+    height:46px;
+}
+.box3{
+    height:246px;
+}
+
+.box4{
+    height:120px;
+}
+.box5{
+    height:142px;
+}
+.box6{
+    height:150px;
+}
