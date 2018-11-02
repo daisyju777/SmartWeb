@@ -770,6 +770,7 @@ padding: 11px 0;  /*위 아래 11px 좌 우 0*/
 
 .box3-inner2{
     height: 200px;
+    position: relative;
 }
 
 .box3-item1{
@@ -812,7 +813,7 @@ padding: 11px 0;  /*위 아래 11px 좌 우 0*/
     display: inline-block;
     font-weight: bold;
     float: left;        
-    /*box3-item2 안에있는 박스 2개중에 한개에만 내용이 담기면 높이가 서로 달라서 비뚤어지는 증상이 나타남. 그러므로 float 지정해줘야 하며 float을 지정해주면 부모 높이가 자동으로 지정되지 않음.(float는 둥둥 떠있으므로) 그렇기 때문에 위의 .box3-item2::after...{} 와같이 부모에 지정해줌  */
+    /*box3-item2 안에있는 박스 2개중에 한개에만 내용이 담기면 높이가 서로 달라서 비뚤어지는 증상이 나타남. 그러므로 float 지정해줘야 하며 float을 지정해주면 부모 높이가 자동으로 지정되지 않음.(float는 둥둥 떠있으므로) 그렇기 때문에 위의 .box3-item2::after...{} 와같이 부모에 clear 속성을 지정해줌  */
     cursor: pointer;
 }
 
@@ -877,4 +878,42 @@ padding: 11px 0;  /*위 아래 11px 좌 우 0*/
 
 .box3-icons.setting{
     background-position: -28px -193px;
+}
+
+
+.list-item{
+    width: 123px;
+    height: 67px;;
+    display: block;
+    float: left;
+    list-style: none;
+    border-right: 1px solid #f1f3f6;
+    padding: 21px 0 22px;
+}
+
+.line-hor{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 199px;
+    background-color: white;
+}
+
+.line-ver1,
+.line-ver2{
+position: absolute;
+height: 1px;
+width: 100%;
+background-color:#f1f3f6;
+}
+
+.line-ver1{
+    top:66px;
+    left:0;
+}
+
+.line-ver2{
+    bottom:66px;
+    left:0
 }
