@@ -1,0 +1,210 @@
+@charset 'utf-8';
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.top{
+    height: 143px;
+}
+.bottom{
+    padding-top :10px;
+    background-color: rgb(242, 242, 242);
+    height: 446px;
+}
+
+.bottom-in{
+    position: relative;
+}
+
+.contents{
+    width: 33.3%;
+    background-color:white;
+    position: absolute;
+}
+
+#box1{
+    height: 246px;
+    left: 0;
+    top: 0;
+}
+
+#box2{
+    height: 75px;
+    left: calc(100% / 3);
+    top: 0;
+}
+
+#box3{
+    height: 155px;
+    left: calc(100% - 33.3%);
+    top:0;
+}
+
+#box4{
+    height: 60px;
+    left: 0;
+    top: 256px;  /*box1 높이 + 간격 10px */
+}
+
+#box5{
+    height: 86px;
+    left: calc(100% / 3);
+    top : 85px; /*box2 높이 + 간격 10px */ 
+}
+
+#box6{
+    height: 261px;
+    left: calc(100% - 33.3%);
+    top : 165px;    /*box3 높이 + 간격 10px */
+}
+
+#box7{
+    height: 259px;
+    left: 0;
+    top : 326px; /*box4 top + box4의 크기 + 간격 10px */
+}
+
+@media(max-width : 1024px){
+    .contents{
+        width: calc(99.95% / 2);
+    }
+
+    #box1,#box3,#box5,#box7{
+        left:0;
+    }
+
+    #box2,#box4,#box6{
+        left: calc(100% - 99.95% / 2);
+    }
+
+     /* 위에 적어준게 있으므로 굳이 여기서 또 안써도 됨
+    #box1,#box2{
+        top: 0;
+    } */
+    
+    #box3{
+        top:256px; /*box1의 높이 + 간격 10px*/
+    }
+    #box4{
+        top:85px; /*box2의 높이 + 간격 10px*/
+    }
+      
+    #box5{
+        top:421px; /*box3의 top + box3의 높이+ 간격 10px*/
+    }
+    #box6{
+        top:155px; /*box4의 top + box4의 높이+ 간격 10px*/
+    }
+    #box7{
+        top : 517px; /*box5의 top + +box5의 길이 + 간격 10px*/
+    }
+    .bottom{
+        height: calc(517px + 259px + 10px + 10px);
+        /*가장 마지막에 있는 박스의 top + 가장 마지막에 있는 박스의 높이 + 간격 10px + padding 10px*/;
+    }
+
+}
+
+
+@media (max-width : 640px){
+    .contents{
+        position: static;       
+        /* relative로 하면 이전의 top과 left기준으로 계산함. 그러므로 static 으로 쓰면 이전의 top과 left는 무시해줌.  */
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .bottom{
+        height: 100%;
+    }
+}
+
+
+/*
+    .contents{
+        width: 100%;
+    }
+
+    #box2{
+        left: 0;
+        top : 256px;
+    }
+
+    #box3{
+        left : 0;
+        top : 341px;
+    }
+
+    #box4{
+        left : 0;
+        top: 506px;
+    }
+
+    #box5{
+        left: 0;
+        top: 576px;
+    }
+
+    #box6{
+        left: 0;
+        top:672px;
+    }
+
+    #box7{
+        left: 0;
+        top: 943px;
+    }
+
+    .bottom{
+        height: 1222px;
+    }
+    */
+
+
+
+.top-title{
+    height: 100px;
+    background-color: #00c73c;
+}
+
+.top-nav{
+    height: 43px;
+}
+
+
+.top-search{
+    height: 40px;
+    margin: 0 15px;
+    background-color: #fff;
+
+}
+
+
+.top-icon-inner1{
+    width: 50px;
+    height: 48px;
+    display: inline-block;
+}
+
+.menu-icon{
+    display: block;
+    width: 22px;
+    height: 17px;
+    background-position: -599px -275px;
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    background-image : url("https://s.pstatic.net/static/www/m/2018/sp_main_v181108.png");
+    background-size: 655px 642px;
+}
+
+.top-icon-inner2{
+    margin-left: calc(100% / 2 - 100px) ;
+    display: block;
+    float: left;
+    width: 200px;
+    height: 48px;
+}
