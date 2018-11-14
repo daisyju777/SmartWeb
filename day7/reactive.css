@@ -1,0 +1,63 @@
+@charset 'utf-8';
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;   /*이걸 써줘야 선을 포함해서 가로가 100%가 됨*/
+}
+
+.container-fluid{       
+    width: 100%;
+}
+
+.container{
+    margin: 0 auto;
+    border : solid 1px black;
+}
+
+.btn{
+    background-color: white;
+    border: 1px solid aquamarine;
+    border-radius: 5px;
+    height: 100px;
+}
+
+@media (max-width:575px){
+    .container{
+        width: 100%;
+    }
+    .btn{
+        width: 100%;
+    }
+}
+
+@media (min-width:576px) and (max-width : 767px){
+    .container{
+        width: 540px;
+    }
+    .btn{
+        width: 80%;
+    }
+}
+
+
+@media (min-width:992px) and (max-width: 1199px){
+    .container{
+        width: 960px;
+    }
+    .btn{
+        width: 40%;
+    }
+}
+
+
+/*
+@media (min-width: 1200px){
+    .container{
+        width: 1000px;
+    }
+    .btn{
+        width: 20%;
+    }
+}
+*/

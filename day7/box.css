@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box-outer{
+    padding: 10px;
+    border: 1px solid red;
+
+}
+
+.box-inner{
+    border: 1px solid black;
+    height: 378px;
+    width: 100%;
+}
