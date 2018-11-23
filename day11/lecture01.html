@@ -1,0 +1,27 @@
+<!-- ==와 ===의 차이 알아보기 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str="123";
+        var num= 123;
+        // ==은 자료형에 상관없이 값이 일치할 때  (다를때는 !=)
+        if(num==str) // 둘은 자료형은 다르지만 str을 문자열로 변환후 비교해줌
+            console.log('문자열 : '+ str + '과 숫자'+ num + '은 같습니다.')
+        else
+            console.log('문자열 : '+ str + '과 숫자'+ num + '은 다릅니다.')
+
+        // ===은 자료형도 일치하고 값도 일치할때 (!==)
+        if (num===str)
+            console.log('문자열 : '+ str + '과 숫자'+ num + '은 완전히 같습니다.')
+        else
+            console.log('문자열 : '+ str + '과 숫자'+ num + '은 완전히 같지 않습니다.')
+    </script>
+</body>
+</html>

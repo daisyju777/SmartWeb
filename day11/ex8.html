@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 지금까진 inline 방식으로했음. 이번은 property 방식. 태그안의 속성값이 아닌 script내에서 기능구현해줌 -->
+    <input type="text" id="id">
+    <br>
+    <input type="text" id="pw" onchange="change(this)">  <!--inline 방식에서도 this사용가능 -->
+    <br>
+    <input type="text" id="repw">
+    <script>
+        var idObj = document.getElementById('id');
+        idObj.onchange = function(){               //값이 바뀌고 focus가 바뀔때 호출됨
+            console.log(this.value);
+        }
+
+        function change(obj){
+            console.log(obj.value);
+        }
+
+        function change2(){
+            var text = this.value;   //this : 현재 해당하는 함수(change2)를 호출한 태그의 객체
+            console.log(text);
+            this.style.color = 'red';
+            this.style.backgroundColor='yellow';
+        }
+        
+        var input3 = document.getElementById('repw');
+        if(input3.addEventListener){
+            input3.addEventListener('change',change2);    //브라우저 버전마다 호출하는 방식이 다르므로 if문으로 나누어서 써줌
+        } else {
+            input3.attachListener('onchange', change2);    //익스플로러 9이하 버전에서 실행됨.
+        }
+
+        var arr = [400,200,300,7];
+        console.log(arr);
+        arr.sort(function(a,b){
+            return a-b; //큰것부터 출력하려면 b-a.  400, 200을 비교할때 400-200은 양수임. 그러므로 400이 더 큰숫자이므로 뒤로감.
+        });
+        console.log(arr);
+
+    </script>
+</body>
+</html>

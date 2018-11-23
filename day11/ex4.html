@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="show()">클릭</button>
+    <div id="content">
+        <!-- 클릭 버튼을 누르면 아래 코드를 추가한 효과가 나타난다. -->
+        <!-- 
+            <div>
+                안녕하세요
+            </div>
+         -->
+    </div>
+    Hello <br>
+    <!-- 
+        학년마다 반이 달라서 선택한 학년에 따라 반도 바뀌도록 해준다. 
+        학년을 선택하고 확인 버튼을 누르면 선택할 수 있는 반의 범위가 달라지게 한다.
+        1학년 : 1~3반
+        2학년 : 1~4반
+        3학년 : 1~5반
+    -->
+    학년
+    <select id="grade">
+        <option class="op" value="1">1</option>
+        <option class="op" value="2">2</option>
+        <option class="op" value="3">3</option>
+    </select>
+    반
+    <select id="class"></select>
+    <button onclick="classlist()">클릭</button>
+    <script>
+        function show(){
+            var content = document.getElementById('content');
+            // subDiv : <div></div> 객체 생성
+            var subDiv = document.createElement('div');              //document.write 를 쓰면 전체 html에 덮어써버림.
+            // text : 텍스트 노드 안녕하세요를 생성
+            var text = document.createTextNode('안녕하세요');
+            // subDiv.appendChild(text) : div태그 안에 안녕하세요라는 텍스트 노드 추가
+            // <div>안녕하세요</div>
+            subDiv.appendChild(text);
+            // id가 content인 요소 안에 <div>안녕하세요</div>를 추가
+            content.appendChild(subDiv);
+
+            console.log(content);
+            console.log(subDiv);
+            //var str = "안녕하세요"
+            //document.write(str);
+        }
+        
+        function classlist(){
+            var gradevalue = document.getElementById('grade');
+            var gradelist = document.getElementByclassName('op');
+            var Class =  document.getElementById('class');
+            var classlist = document.createElement('option');
+            if (gradelist[0].value == 1) Class.appendChild(classlist)
+            classlist.value = [1,2,3];
+            if (gradelist[1].value == 2) Class.appendChild(classlist)
+            classlist.value = [1,2,3,4];
+            if (gradelist[2].value == 3) Class.appendChild(classlist)
+            classlist.value = [1,2,3,4,5];
+        }
+
+
+    </script>
+</body>
+</html>

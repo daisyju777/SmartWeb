@@ -1,0 +1,28 @@
+<!-- 2. 비밀번호입력창과 비밀번호 입력확인창을 만들고 버튼을 누르면 비밀번호와 비밀번호확인이 일치하는지를 알림창으로 띄워주세요. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <label>비밀번호입력</label><input type="password" id="pw">
+    <label>비밀번호확인</label><input type="password" id="pwcheck">
+    <button onclick="pwcheckf()">확인</button>
+    <script>
+        function pwcheckf(){
+            var pw = document.getElementById("pw").value;
+            var pwcheck = document.getElementById("pwcheck").value;
+            if (pw=="") {
+                alert("비밀번호를 입력하세요.");
+                return;
+            }
+            if (pw==pwcheck) alert("비밀번호와 비밀번호확인이 일치합니다.");
+            else alert("비밀번호와 비밀번호확인이 일치하지 않습니다.");
+        }
+    </script>
+</body>
+</html>
+
