@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+    crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <p><b>Hello</b></p>
+    <button>클릭</button>
+    <!-- css를 이용한 짠 애니매이션코드. 
+    <div>라라라</div>
+    <style>
+         @keyframes ani{
+             0%{
+                 color: black;
+             }
+             50%{
+                 color: red;
+             }
+        
+         }
+         div{
+             animation-name: ani;
+             animation-duration: 4s;
+             animation-iteration-count: infinite;
+         }
+    </style> -->
+    <script>
+    /*  
+    $(document).ready 메소드 안에 코드를 구현하면 스크립트<script>가 어디에 위치하던 동일하게 동작을 한다. 
+    하지만  $(document).ready 메소드 밖에 선언을 하면 스크립트 위치에 따라(head태그안인지 body태그 안인지) 동작하지 않을수도 있다.
+    그래서 가급적이면  $(document).ready메소드 안에 기능들을 구현하는것이 좋다.
+    */
+    $(document).ready(function(){
+        function test(){
+            $('p').animate({'color':'red', 'font-size':'40px'},'slow');  
+            //제이쿼리를 이용해 짠 에니매이션. 여기서 css도 적용해서 나타내려면(폰트색깔 등) 
+            //위에 https://code.jquery.com/ui/1.12.1/jquery-ui.js.. 추가해줘야함
+            var text = $('p').text();
+            var html = $('p').html();
+            console.log(text);
+            console.log(html);
+            //$('p').text('123');
+            //$('p').html('<input type="text">');
+        }
+
+        $('button').click(test);
+
+        $('#input1').focus(function(){         //focus : 활성화 될때 
+            $(this).css('background-color','yellow');
+        });
+        $('#input1').blur(function(){          //blur : 포커스가 해제될때 
+            $(this).css('background-color','rgb(255,255,255');
+        });
+        $('#input1').mouseenter(function(){    //mouseenter : 마우스커서가 영역안으로 들어갔을때
+            $(this).css('background-color','rgb(0,255,0)');
+        });
+        $('#input1').mouseleave(function(){     //mouseenter : 마우스커서가 영역밖으로 나왔을떄
+            $(this).css('background-color','#ffffff');
+            $("p").fadeIn()
+        });
+
+    });
+    </script>
+</body>
+</html>

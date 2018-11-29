@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        div{
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 40px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div class="test">5</div>
+    <script>
+        $(document).ready(function(){
+            //first() : 선택된 객체들중 첫번째 객체
+            $('div').first().css('border-color','red');     // $('div').first().css와 같이 .으로 연결하는것을 Chaining 기법이라함.
+            //last() : 선택된 객체들중 마지막 객체
+            $('div').last().css('border-color','blue');
+            //eq(num) : 선택된 객체중 num+1번째 객체   eq(1) : 배열중 첫번째요소, 그러므로 2번째객체임
+            $('div').eq(1).css('font-weight','700');
+            $('div').filter('.test').css('color','red') //아래 코드와 동일한 결과
+            //$('div.test').css('color','red');
+            //not()은 filter()의 반대
+            $('div').not('.test').css('background-color','yellow');
+        });
+    </script>
+</body>
+</html>

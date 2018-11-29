@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+    <style>
+    .outline-red{
+        outline-color: red;
+    }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <script>
+    $(document).ready(function(){
+        $('input').focus(function(){
+            $(this).addClass('outline-red');
+        });
+
+        //outline 일때는 blur 할 필요가 없음. (border사용할때는 필요)
+        // $('input').blur(function(){
+        //     $(this).removeClass('outline-red');
+        // });
+            
+        //아래와같이써도 결과는 같음
+        // $('input').focus(function(){
+        //     $(this).css('outline-color','red');
+        // });
+        
+    });
+    </script>
+</body>
+</html>

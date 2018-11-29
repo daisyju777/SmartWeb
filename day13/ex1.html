@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- //code.jquery.com/jquery-3.3.1.min.js  min을 제거하면 코드사이의 공백을 제거해서 압축해줌. 용량이 작아짐-->
+    <!-- 제이쿼리파일 외부에서 불러오기 (인터넷이 실행되어야함) -->
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- 제이쿼리파일을 만들어서 내부파일로 불러오기 -->
+    <script src="jquery-3.3.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="id" value="123">
+    <input type="text" class="pw" value="456">
+    <input type="text" class="pw" value="111">
+    <button class="btn">클릭1</button>
+    <button class="btn">클릭2</button>
+    <form class="form">
+        <button>제출</button>
+    </form>
+    <script>
+        /**
+         * $(document).ready(function(){  });  >> document(문서)(바디태그안에 있는 코드들)가 다 로딩되고 실행해라. 이를 안써주면 문서가 로딩되기전에                                           제이쿼리 코드부터 실행되서 적용이 안되는것이 있을수도 있게됨
+         * 모든 제이쿼리는 $로 시작함
+         * */
+        $(document).ready(function(){
+            // 객체의 값을 가져올 때에는 val()
+            // 설정할때에는 val(설정값)을 이용
+            var id = $('#id').val();       //$()안에는 selector선택자가 들어감. 제이쿼리에서는 value대신에 함수val()을 사용
+            console.log(id);
+            var pw = $('.pw').val();         //클래스이름으로 요소값을 가져올때는 querySelector처럼 작동함. 클래스가 pw인 객체들중 첫번째값을 가져옴
+            console.log(pw);
+            $('#id').val('789');     //값을 설정하려면 val()안에 매개변수로 넣어줌.
+            // 클래스 이름이 pw인 객체들의 value를 7890으로 설정해라.
+            $('.pw').val('7890');    // 클래스이름으로 요소값을 설정할때는 클래스 이름이 pw인 '모든 객체'의 value를 바꿈.
+            //클래스 이름이 btn인 객체들이 클릭되면 function()을 실행해라. (밑의 function을 익명함수라고도 함. 따로 이름을 붙이지 않기 때문에)
+              //자바스크립트 에서는 클래스이름이 btn인 객체들에게 같은 효과를 주려면 일일히 onclick=aa() 과 같이 설정해줘야함. 제이쿼리가 훨씬 편리
+            $('.btn').click(function(){
+                console.log('클릭됐습니다.');
+            });
+            $('.form').submit(function(){
+                console.log('제출 실패');
+                return false;    // 서버에 submit하지 않음. 그러므로 버튼을 눌러도 값이 초기화 되지 않음
+            });
+            console.log($('#id').css('color'));  // id가 id인 태그의 컬러속성을 가져옴.
+            $('#id').css('color','red')         // id가 id인 태그의 컬러값을 설정해줌.
+            $('#id').css('background-color','yellow');
+
+
+        });
+    </script>
+</body>
+</html>

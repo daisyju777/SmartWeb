@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://naver.com" target="_blank">네이버</a>
+    <button id="btn1">버튼</button>
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                var a = $('a');
+                console.log(a.attr('href'));   //가져올때 매개변수가 한개면a.attr('href') 설정할때는 매개변수가 2개a.attr('href','http://daum.net')
+                if (a.text()=='네이버'){        //가져올때 매개변수가 0개면a.text() 설정할때는 매개변수가 1개a.text('다음')
+                a.attr('href','http://daum.net');  
+                a.text('다음');
+                } else {
+                    a.attr('href','http://naver.com');  
+                    a.text('네이버');             
+                }
+                //input태그는 텍스트값 가져오고 설정할때 val()이용 나머지태그(a,div,p 등등)는 text()이용
+                //https://www.w3schools.com/jquery/jquery_dom_set.asp
+            });
+        });
+    </script>
+</body>
+</html>
