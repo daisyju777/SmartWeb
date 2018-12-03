@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p class="text">안녕하세요. 제이름은 <span>홍길동</span>입니다.</p>
+    <p>안녕하세요. 제이름은 <span>임꺽정</span>입니다.</p>
+    <script>
+        $(document).ready(function(){
+            var obj1 = $('p').filter('.text').text();  //p태그들 중에서 클래스가 text인 elements의 text()값을 보여줌.
+            var obj2 = $('p.text').text(); //위 코드와 결과값 같음.
+            var obj3 = $('p').not('.text').text(); //p태그들 중에서 text클래스를 가지지 않는 elements들의 text()값을 보여줌.
+            console.log(obj1);
+            console.log(obj2);
+            console.log(obj3);
+        });
+    </script>
+</body>
+</html>

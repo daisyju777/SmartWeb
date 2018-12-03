@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="text">
+        과일 리스트
+        <ol>
+            <li>사과</li>
+            <li>배</li>
+            <li>바나나</li>
+        </ol>
+    </div>
+    <script>
+        $(document).ready(function(){
+            //ol > div > body
+            $('li').parents().css('border','solid 1px red'); //li태그의 모든 부모(조상)에 속성을 적용함. (div태그, body태그)
+            //ol > div
+            $('li').parentsUntil('body').css('border','solid 1px blue'); // body태그가 나오기 전까지 모든 부모들에 속성을 적용함. (body태그 포함x)
+            // ol
+            $('li').parent().css('border','solid 1px black'); //li태그의 바로 위 부모에 속성을 적용함. (ol태그).
+            //div< ol < li 에서 li 정보
+            $('div').find('li').css('color','red'); //div태그의 '안'에있는 li태그에 속성을 적용함.
+        });
+    </script>
+</body>
+</html>

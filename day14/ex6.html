@@ -1,0 +1,50 @@
+<!--
+    메뉴1, 메뉴2, 메뉴3을 가지는 네비게이션을 생성을 하고, 
+    가로의 길이가 640px이하가 되면 메뉴1, 메뉴2, 메뉴3을 없애고 햄버거 메뉴를 보여준다.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="ex6.css">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+        <ul id="ham">
+            <li><i class="fas fa-bars"></i></li>
+        </ul>
+        <ul id="sub-menu">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+    </nav>
+    1
+    <script>
+        $(document).ready(function(){
+            $('#ham').click(function(){
+                $('#sub-menu').toggleClass('display-block');
+            });
+
+            //윈도우 창이 변할때마다 그 width()값을 알수있음
+            $(window).resize(function(){
+                //console.log('test');
+                //console.log($(window).width());
+                if($(window).width()>640){
+                    $('#sub-menu').removeClass('display-block');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
