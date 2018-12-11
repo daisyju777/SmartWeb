@@ -60,11 +60,30 @@ $(document).ready(function(){
       $('.item5').hover(function(){
         $('.real-search-box').toggleClass('display-block');
       });
+
+      $('.api-list>li').hover(function(){
+        //$('.api-list>li>a').toggleClass('display-none');
+        $(this).children('a').toggleClass('display-none');
+       // $('.api-list>li>div').toggleClass('display-block');
+        $(this).children('div').toggleClass('display-block');
+      });
      
-      $('.api-list>li:first').hover(function(){
-        $('.subbox').toggleClass('display-block');
-        $('.sub1').toggleClass('display-block');
-        $('.sub2').toggleClass('display-block');
+
+      $('.box5-prev').hover(function(){
+        $('.btn-prev').toggleClass('btn-prev2');
+      })
+
+      $('.box5-next').hover(function(){
+        $('.btn-next').toggleClass('btn-next2');
+      });
+
+      function next(num){
+        $('.color-black').text(num);
+      };
+
+      $('.box5-next').click(function(){
+          next(1);
+
       });
 
 });

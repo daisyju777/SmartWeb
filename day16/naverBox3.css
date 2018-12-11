@@ -634,6 +634,10 @@ padding: 11px 0;  /*위 아래 11px 좌 우 0*/
     background-position: -433px -303px;
 }
 
+.btn-prev2{
+    background-position: -449px -303px;
+}
+
 .btn-next{
     width: 6px;
     height: 11px;
@@ -642,6 +646,9 @@ padding: 11px 0;  /*위 아래 11px 좌 우 0*/
     background-position: -433px -324px;
 }
 
+.btn-next2{
+    background-position: -449px -324px;
+}
 
 
 .day{
@@ -1081,68 +1088,38 @@ ul.api-list>li>a{
     display: none;
 }
 
-.subbox{
-   position: absolute;
-    top : 0;
-    left: 0;
-   background-color:  #f9fafc;
-   width: 123px;
-   height: 67px;
-    text-align: center;
+.api-list>li>div{
     display: none;
-    padding: 18px 0;
-}
-
-
-.sub1{
-    width: 35px;
+    width: 95px;
     height: 30px;
-    border: 1px solid #e3e7ee;
+    margin: 0 auto;
     background-color: white;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 14px;
-    padding: 7px 0;
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    float: left;
 }
 
-
-.sub2{
-    width: 58px;
-    height: 30px;
-    border: 1px solid #e3e7ee;
-    background-color: white;
-    display: inline-block;
-    font-size: 12px;
-    line-height: 14px;
-    padding: 7px 0;
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    float: left;
+/* 이벤트가 적용되는 객체와 실행되는 객체가 같을때는 굳이 js로 안해도됨 */
+ul.api-list>li:hover{
+    background-color: #f9fafc;
 }
 
-.subbox a:visited{
-    color: black;
-}
-
-.subbox a{
-    text-decoration: none;
-}
-
-.subborder{
-    border-color: #bec8d8;
-}
 
 /* 공통 클래스들 */
 
 .real-search-box:hover,
 #auto-box.display-block,
+ul.api-list>li>div.display-block,
 .display-block{
     display : block;
 }
 
+ul.api-list>li>a.display-none,
+.display-none{
+    display: none;
+}
 
+.box5-item2>b{
+    display: none;
+}
+
+.box5-bottom>div{
+    display: none;
+}
