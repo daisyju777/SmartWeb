@@ -30,14 +30,14 @@ $(document).ready(function(){
     //time은 이동하는데 걸리는 시간
     var ticker = function(div,h,time)
     {
-        timer = setTimeout(function(){
+        timer = setTimeout(function(){             //콜백함수. 2초뒤에 function()을 실행함
             $(div+' li:first').animate( {marginTop: h}, time, function()
             {
                 //여기서 this는 item5클래스 안에 있는 ul태그 안에 있는 첫번째 li태그객체
                 //detach는 해당 객체를 게저한 후 해당 객체를 리턴한다.
                 $(this).detach().appendTo(div+'>ul').removeAttr('style');  //removeAttr('style')는 marginTop: '-20px' 스타일을 지워줌
-            });
-            ticker(div,h,time);
+            });          //자식.appnedTo(부모)   부모.append(자식) 
+            ticker(div,h,time);   //자기자신을 호출. 재귀함수
         }, 2000);         
       };
       ticker('.item5','-20px',400);
@@ -116,11 +116,17 @@ $(document).ready(function(){
       $('.rank-lists').first().css('display','block');
       $('.rank-lists').last().css('display','none');
 
+      /*메뉴 설정에서 설정한 메뉴 갯수*/
       var selectedMenuCnt = 0;  //사용자가 지정한 메뉴 갯수
+      /*기본 메뉴*/
       var menuArr = ["dici","newsi","stocki","dealeri","mapi","moviei","musici","booki","webtooni"]
       $('.menu-setting').click(function(){
+        /*메뉴 설정 클릭시 5개의 빈 박스를 보이기 위한 cnt*/
         var cnt=0;
         $('.item2-1').each(function(){
+            /*기본 코드에 item2-1과 back-img와 각 아이콘 클래스가 있는데 
+            back-img와 아이콘 클래스를 제거하기 위해 prop 함수로 class를 덮어쓰기한다.
+            */
             $(this).prop('class','item2-1');
             cnt++;
             if(cnt > 5){
