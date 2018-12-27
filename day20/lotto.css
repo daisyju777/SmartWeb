@@ -1,0 +1,33 @@
+@charset 'utf-8';
+
+*{
+    box-sizing: border-box;
+}
+
+.box,
+#reset{
+    border: 1px solid black;
+    outline: none;
+    width: 80px;
+    height: 80px;
+    line-height: 76px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#input{
+    width: 700px;
+    margin: 0 auto;
+}
+
+#boxes{
+    margin-top: 10px;
+}
+
+.selected{
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
