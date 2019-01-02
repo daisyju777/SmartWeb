@@ -1,0 +1,55 @@
+@charset 'utf-8';
+
+
+nav::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+p{
+    font-size: 40px;
+    opacity: 0;
+    animation-name: open;
+    animation-duration: 2s;
+    animation-iteration-count: none;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;  /*애니메이션이 끝나면 그 끝난 위치에서 유지를해라. backwoard는 처음으로 다시 돌아감*/
+    height: 200px;
+    overflow: auto;
+}
+
+/*https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp*/
+p::-webkit-scrollbar {       /*webkit이므로 크롬에서만 적용되고 익스플로러에서는 작동하지 않음*/
+    /* opacity: 0; */
+    display: none;
+  }
+
+
+.ham-menu{
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -200px;
+    width: 200px;
+    background-color:white;
+    border: 1px solid black; 
+    box-sizing: border-box; /* box-sizing: border-box 를 안하면 보더를 포함하여 가로가 202px이 되어 튀어나와 있음.*/
+}
+
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+@keyframes open{
+    from{ opacity: 0;}
+    to{opacity: 1;}
+}

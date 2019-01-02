@@ -1,0 +1,79 @@
+@charset 'utf-8';
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('main_visual_img01.gif');
+    background-size: cover;      
+    /*contain은 원본이미지 전체가 들어가도록 해주기 때문에 반복됨(비율 유지). 
+      cover는 더 긴쪽을 기준으로 비율을 맞춰줌 (비율 유지)*/
+    background-position: 50% 50%;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+body{
+    background-color: black;
+}
+
+nav::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+.ham-menu{
+    float: right;
+    cursor: pointer;
+    font-size: 35px;
+    color: white;
+}
+
+
+.sidebar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -200px;
+    width: 200px;
+    background-color:white;
+    border: 1px solid black; 
+    box-sizing: border-box; /* box-sizing: border-box 를 안하면 보더를 포함하여 가로가 202px이 되어 튀어나와 있음.*/
+}
+
+.sidebar-close{
+    font-size: 35px;
+    float: right;
+    cursor: pointer;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+h1>span{
+    color: yellow;
+}
+
+p{
+    padding: 50px;
+    color: white;
+    height: 200px;
+    overflow: auto;
+}
+
+p::-webkit-scrollbar {       /*webkit이므로 크롬에서만 적용되고 익스플로러에서는 작동하지 않음*/
+    /* opacity: 0; */
+    display: none;
+  }

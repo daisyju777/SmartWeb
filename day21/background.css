@@ -1,0 +1,58 @@
+@charset 'utf-8';
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes background{
+    /* 시작 시. 0% 대신 from 사용 가능. 전체시간을 기준으로 0% */
+    0% { background-image : url('main_visual_img01.gif') } 
+    /* 애니메이션 동작 시간. 전체시간을 기준으로 33% 시점에 녹색이 되기 위해 파란색에서 서서히 녹색으로 진행됨 */
+    20% { background-image : url('main_visual_img02.gif') }  
+    40% { background-image : url('main_visual_img03.gif') } 
+    /* 끝까지. 100% 대신 to 사용 가능 
+    무한 반복이고, 자연스럽게 넘어가게 하기 위해서 0%일때와 100%일때 색깔이 같게 해준다.*/
+    60% { background-image : url('main_visual_img04.gif') } 
+    80% { background-image : url('main_visual_img05.gif') }
+    100% { background-image : url('main_visual_img01.gif') }
+}
+
+.bg{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url('main_visual_img01.gif');
+    background-size: cover;      
+    /*contain은 원본이미지 전체가 들어가도록 해주기 때문에 반복됨(비율 유지). 
+      cover는 더 긴쪽을 기준으로 비율을 맞춰줌 (비율 유지)*/
+    background-position: 50% 50%;
+    animation-name: background;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    opacity: 0.4;
+}
+
+body{
+    background-color: black;
+}
+
+
+.animation{
+    font-size: 40px;
+    animation-name: ani;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes ani{
+    0% { color : black; }
+    25% { color : red;}
+    50% { color : blue;}
+    75% { color : green;}
+    100% { color : black;}
+}

@@ -1,23 +1,24 @@
 $(document).ready(function(){
     var answer = randomArr();
     console.log(answer);
-    var answer = [3, 9, 7];
-    var p1 = [7,9,6];
+    var arr = [];
+    // var answer = [3, 9, 7];
+    // var p1 = [7,9,6];
 
-    /* answer와 p1을 비교하여 현재 상황을 판별하여 1B이 출력되도록 함*/
-    var strike = getStrike(answer,p1);
-    var ball = getBall(answer,p1);
+    // /* answer와 p1을 비교하여 현재 상황을 판별하여 1B이 출력되도록 함*/
+    // var strike = getStrike(answer,p1);
+    // var ball = getBall(answer,p1);
 
-    if(strike == 0 && ball == 0)
-        console.log('3O');
-    else if(strike == 3)
-        console.log('3S. 정답입니다.');
-    else if(strike == 0)
-        console.log(ball+'B');
-    else if(ball == 0)
-        console.log(strike +'S');
-    else
-    console.log(strike + 'S ' + ball + "B");
+    // if(strike == 0 && ball == 0)
+    //     console.log('3O');
+    // else if(strike == 3)
+    //     console.log('3S. 정답입니다.');
+    // else if(strike == 0)
+    //     console.log(ball+'B');
+    // else if(ball == 0)
+    //     console.log(strike +'S');
+    // else
+    // console.log(strike + 'S ' + ball + "B");
 
     function getStrike(arr1, arr2){
         var strike = 0;
@@ -63,9 +64,9 @@ $(document).ready(function(){
 
     if(selectedCnt < 3 || $(this).hasClass('selected')){
         if($(this).hasClass('selected')){
-            p1.splice(p1.indexOf($(this).val()),1);
+            arr.splice(arr.indexOf($(this).val()),1);
         } else {
-            p1.push($(this).val());
+            arr.push($(this).val());
         }
 
         matchArr();
@@ -74,21 +75,21 @@ $(document).ready(function(){
         alert('3개를 선택해야 합니다.')}
     });
 
-    var p1 = [];
+
     function matchArr(){
          var cnt = 0;
          for(cnt = 0; cnt<3; cnt++){
-             if(cnt < p1.length)
-                 $('#input>.box').eq(cnt).val(p1[cnt]);
+             if(cnt < arr.length)
+                 $('#input>.box').eq(cnt).val(arr[cnt]);
              else
                  $('#input>.box').eq(cnt).val('');
          }
     }
 
     $('#submit').click(function(){
-        var strike = getStrike(answer,p1);
-        var ball = getBall(answer,p1);
-        if(p1.length != 3){
+        var strike = getStrike(answer,arr);
+        var ball = getBall(answer,arr);
+        if(arr.length != 3){
             alert('3개를 선택해야합니다.');
             return;
         }
