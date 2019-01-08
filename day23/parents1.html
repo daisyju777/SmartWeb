@@ -1,0 +1,38 @@
+<!-- 인풋창에 가로, 세로 값을 입력했을때 그 크기에 맞는 자식창 띄우기 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>부모 윈도우</title>
+</head>
+<body>
+    <button id="btnChild">자식창 열기</button><br>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <script>
+        $('#btnChild').click(function(){
+            var w = document.getElementById('input1').value;
+            var h = document.getElementById('input2').value;
+            var minW = 400;
+            var minH = 400;
+            var maxW = 1000;
+            var maxH = 1000;
+            if( w == "" || parseInt(w) < minW)        
+            //parseInt()를 쓰지않으면 문자열비교가됨
+            // 문자열 10과 문자열 8을 비교하면 8이 더 큼.(10의 첫번째글자 1과 8을 비교하게 됨)
+                w = minW;
+            else if(parseInt(w) > maxW)
+                w = maxW;
+            if(h == "" || parseInt(h) < minH)
+                h = minH;
+            else if(parseInt(h) > maxH)
+                h = maxH;
+            window.open('child1.html','child','width='+w+',height='+h); 
+            //window.open 의 리턴값은 새로 연 윈도우(child.html)의 객체정보임
+        });
+    </script>
+</body>
+</html>

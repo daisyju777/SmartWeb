@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>부모 윈도우</title>
+</head>
+<body>
+    <input type="text" id="input1">
+    <button id="btnChild1" class="btnChild">열기</button><br>
+    <input type="text" id="input2">
+    <button id="btnChild2" class="btnChild">열기</button>
+    <input type="hidden" id="input">
+    <script>
+        $('.btnChild').click(function(){
+            window.open('child2.html','child','width=400,height=500');  
+        });
+
+        $('#btnChild1').click(function(){
+            $('#input').val("input1");
+        });
+
+        $('#btnChild2').click(function(){
+            $('#input').val("input2");
+        });
+    </script>
+</body>
+</html>

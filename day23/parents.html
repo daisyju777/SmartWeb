@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>부모 윈도우</title>
+</head>
+<body>
+    <button id="btnChild">자식창 열기</button><br>
+    <input type="text" id="input">
+    <button id="btnData">데이터 전달</button>
+    <script>
+        var childWin;
+        $('#btnChild').click(function(){
+            childWin = window.open('child.html','child','width=400,height=500');  
+            //window.open 의 리턴값은 새로 연 윈도우(child.html)의 객체정보임
+        });
+        $('#btnData').click(function(){
+            childWin.document.getElementById('divData').value=document.getElementById('input').value;
+        });
+    </script>
+</body>
+</html>
