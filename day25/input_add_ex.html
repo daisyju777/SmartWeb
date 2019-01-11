@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>좋아하는 과일을 입력하세요.</h1>
+    <div id="inputBox">
+        <input type="text" class="input"><br>
+    </div>
+    <div></div>
+    <button id="btnAdd">추가</button>
+
+<script>
+$(document).ready(function(){
+    $('#btnAdd').click(function(){
+        var str = '<input type="text" class="input"><br>';
+        var str2 = '<br><input type="text" class="input">'
+        /*div 태그를 이용해도 되지만 div태그가 다수일 경우 원하지 않는 동작이 될 수 있다. 그러므로 아이디로 찾는 것이 좋음*/
+        //$('div').append(str);
+        //$('#inputBox').append(str);  간단하면서 좋은 코드
+
+        //parent(), find()를 이용하기 위해 조금 복잡하게 작성된 코드
+        //parent는 body태그가됨. body태그안에서 id가 inputBox인 element를 찾는다.
+        //$(this).parent().find('#inputBox').append(str);
+
+        //after()함수를 사용할때 <br>을 <input>뒤에 놓으면 <input><br> 사이에 코드가 들어가므로 잘못된 결과가 나옴.
+        //그러므로 <br><input type="text" class="input"> 와 같이 써줘야함
+        $('.input').last().after(str2);
+        //input클래스가 있는 객체 모두를 한번씩 focus()를 실행하고 최종적으로 마지막에 있는 객체가 focus()가 된다.
+        //$('.input').focus();
+        //마지막 객체만 focus()를 한다.
+        $('.input').last().focus();        
+    });
+
+});
+</script>
+</body>
+</html>

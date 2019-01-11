@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.3.1.js"></script>
+    <title>Document</title>
+    <style>
+    input{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div id="input">
+        <input type="text">
+        <input type="text">
+    </div>
+    <button id="add">추가</button>
+    <button id="ok">확인</button>
+<script>
+$(document).ready(function(){
+    $('#add').click(function(){
+        var addinput = '<input type="text">'
+        $('#input').append(addinput);
+    });
+    $('#ok').click(function(){
+        var value = new String();
+        var comma=false;
+        $('input').each(function(){
+            value += $(this).val();
+
+            if ($(this).val()!="") {
+                comma=true;
+                value += ",";
+            } else comma=false;
+        });
+        console.log(value.substr(-1,1));
+        $(opener.document).find('input').val(value);
+    });
+});
+</script>
+</body>
+</html>
