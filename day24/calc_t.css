@@ -1,0 +1,58 @@
+@charset 'utf-8';
+*{
+    box-sizing: border-box;
+}
+
+.input{
+    box-sizing: border-box;
+    width: 318px;
+    height: 35px;
+    text-align: right;
+    font-size: 35px;
+    margin-bottom: 30px;
+    border: none;
+}
+
+.div-row{
+   display: flex; 
+   /*자식박스들의 부모태그의 display를 flex로 지정해주면 자식박스들의 엔터나 스페이스에 대한 공백을 무시해줌.
+   div-btn의 display를 inline-block으로 하면 엔터로인한 간격이생김. 이간격을 없애기 위해서는 float 지정해주는 등 여러방법이 있지만 여기서는
+   박스들의 부모태그를 flex로 해줌.
+   */
+}
+
+.div-btn{
+    box-sizing: border-box;
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    font-size: 35px;
+    line-height: 78px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white
+}
+
+.div-btn:hover{
+    background-color: gainsboro;
+}
+
+.div-btn:active{
+    background-color: gray;
+}
+
+
+.board{
+    box-sizing: border-box;
+    height: 30px;
+    width: 318px;
+    text-align: right;
+    font-size:20px;
+    border: none;
+}
+
+.div-board{
+    height: 95px;
+    width: 320px;
+    border: 1px solid black;
+}
